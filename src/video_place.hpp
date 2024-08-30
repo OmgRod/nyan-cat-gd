@@ -23,7 +23,9 @@ public:
     }
 
     virtual void someOtherBtn(CCObject*) {
-        game::restart();
+        // game::restart();
+        auto scenePrev = CCTransitionFade::create(0.5f, MenuLayer::scene(true));
+        CCDirector::sharedDirector()->replaceScene(scenePrev);
     }
 
     static CCScene* scene() {
@@ -74,7 +76,7 @@ public:
         player->setHeight(0.9 * winSize.height * 9 / 16);
         player->setPosition(winSize.width * 0.5, winSize.height * 0.5);
 
-        auto linkBtnSpr = ButtonSprite::create("Open Ko-fi");
+        auto linkBtnSpr = ButtonSprite::create("nyan nyan");
         auto linkBtn = CCMenuItemSpriteExtra::create(
             linkBtnSpr, this, menu_selector(GPKofiLayer::onKofiBtn)
         );
