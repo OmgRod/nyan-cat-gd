@@ -30,7 +30,16 @@ class $modify(MyMenuLayer, MenuLayer) {
 	}
 
 	void onMyButton(CCObject*) {
-		auto scenePrev = CCTransitionFade::create(0.5f, GPKofiLayer::scene());
-        CCDirector::sharedDirector()->replaceScene(scenePrev);
+		geode::createQuickPopup(
+			"meow",            // title
+			"are you sure you want to go in? if you do, you will have to restart to go out",   // content
+			"yes", "no",      // buttons
+			[](auto, bool btn1) {
+				if (!btn1) {
+					auto scenePrev = CCTransitionFade::create(0.5f, GPKofiLayer::scene());
+        			CCDirector::sharedDirector()->replaceScene(scenePrev);			
+				}
+			}
+		);
 	}
 };

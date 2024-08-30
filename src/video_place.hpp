@@ -23,7 +23,7 @@ public:
     }
 
     virtual void someOtherBtn(CCObject*) {
-        CCDirector::get()->popScene();
+        game::restart();
     }
 
     static CCScene* scene() {
