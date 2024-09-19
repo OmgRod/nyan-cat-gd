@@ -53,7 +53,7 @@ public:
         auto winSize = CCDirector::sharedDirector()->getWinSize();
         auto menu = CCMenu::create();
 
-        auto title = CCLabelBMFont::create("nyan nyan nyan", "goldFont.fnt");
+        auto title = CCLabelBMFont::create("Nyan Cat", "goldFont.fnt");
         title->setZOrder(1);
         title->setPositionX(winSize.width * 0.5);
         title->setPositionY(winSize.height * 0.85);
@@ -76,7 +76,7 @@ public:
         player->setHeight(0.9 * winSize.height * 9 / 16);
         player->setPosition(winSize.width * 0.5, winSize.height * 0.5);
 
-        auto linkBtnSpr = ButtonSprite::create("nyan nyan");
+        auto linkBtnSpr = ButtonSprite::create("Open on YouTube");
         auto linkBtn = CCMenuItemSpriteExtra::create(
             linkBtnSpr, this, menu_selector(GPKofiLayer::onKofiBtn)
         );
